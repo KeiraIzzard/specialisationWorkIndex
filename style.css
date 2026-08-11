@@ -1,38 +1,38 @@
-/*!!!!!*/
-/*add in your own font imports here*/
-/*remember to update them in the rest of the CSS : eg the body selector*/
-@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
-/*!!!!!*/
-/*change out, and/or add colours to the colour scheme*/
 :root{
     /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
     /* https://lospec.com/palette-list/1bit-monitor-glow */
-    --colour-1: #7f2929;
-    --colour-2: #f0efd5;
+    --colour-1: #743547; /* text color light mode*/
+    --colour-2: #fffff7; /*background color light mode*/
+    --link-colour: #407c5b; /*link colour light mode*/
 }
 
-/* this swaps the colour order to account for user's OS dark mode */
-/*!!!!!*/
-/*remember to update the colours here too to reflect the above changes*/
 @media (prefers-color-scheme: dark) {
     :root{
-        --colour-1: #f0efd5;
-        --colour-2: #7f2929;
-    }
-}
-
+            --colour-1: #fffff7; /*text color dark mode*/
+            --colour-2: #743547; /*background color dark mode*/
+            --link-colour: #b9ffc9; /*link colour dark mode*/
+        }
+       
+    
+        }
+        
+        a {
+            color: var(--link-colour);
+        }
 
 body {
-    background-color: var(--colour-2);
-    color: var(--colour-1);
-    font-family: 'Work Sans', sans-serif;
-    line-height: 1.5;
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
+        background-color: var(--colour-2);
+        color: var(--colour-1);
+        font-family: 'Roboto Mono', monospace;
+        line-height: 1.5;
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        }
+
 
 header {
     display: flex;
@@ -41,6 +41,14 @@ header {
 }
 header h1 {
     text-align: center;
+}
+
+.leftAlignNav {
+    align-items: flex-start;
+}
+
+main h2 {
+    margin-block: 2rem;
 }
 
 .mainNavContainer {
@@ -140,6 +148,4 @@ footer {
     }
 }
 /* compact breakpoint : phone in portrait */
-@media (width < 600px) {
-
-}
+@media (width < 600px){ }
