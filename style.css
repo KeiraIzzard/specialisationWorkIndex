@@ -6,17 +6,25 @@
     --colour-1: #743547; /* text color light mode*/
     --colour-2: #fffff7; /*background color light mode*/
     --link-colour: #407c5b; /*link colour light mode*/
+    --prose-flow: 1.95em;
 }
+
 
 @media (prefers-color-scheme: dark) {
     :root{
             --colour-1: #fffff7; /*text color dark mode*/
             --colour-2: #743547; /*background color dark mode*/
             --link-colour: #b9ffc9; /*link colour dark mode*/
+           
+            }
+            .prose h3 {
+                margin-block-start: 2em;
+                }
         }
        
-    
-        }
+        
+            
+        
         
         a {
             color: var(--link-colour);
