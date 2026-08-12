@@ -20,7 +20,15 @@
             .prose h3 {
                 margin-block-start: 2em;
                 }
+
+                .prose img {
+                    max-width: 100%;
+                    width: 500px;
+                    border-radius: 0.75rem;
+                    margin-block: 1em;
+                }
         }
+
        
         
             
