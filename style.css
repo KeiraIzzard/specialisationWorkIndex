@@ -1,112 +1,98 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
 
 :root{
-    /* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
-    /* https://lospec.com/palette-list/1bit-monitor-glow */
+/* basic 2-bit palette from 1bit Monitor Glow Palette by Polyducks */
+/* https://lospec.com/palette-list/1bit-monitor-glow */
     --colour-1: #743547; /* text color light mode*/
     --colour-2: #fffff7; /*background color light mode*/
     --link-colour: #407c5b; /*link colour light mode*/
     --prose-flow: 1.95em;
 }
 
-
 @media (prefers-color-scheme: dark) {
-    :root{
+:root{
             --colour-1: #fffff7; /*text color dark mode*/
             --colour-2: #743547; /*background color dark mode*/
             --link-colour: #b9ffc9; /*link colour dark mode*/
-           
-            }
-            .prose h3 {
-                margin-block-start: 2em;
-                }
-
-                .prose img {
-                    max-width: 100%;
-                    width: 500px;
-                    border-radius: 0.75rem;
-                    margin-block: 1em;
-                }
         }
+}
 
-       
-        
-            
-        
-        
-        a {
-            color: var(--link-colour);
-        }
+a {
+color: var(--link-colour);
+}
+
+section > h3 {
+    margin-block-end: 1em;
+    }
 
 body {
-        background-color: var(--colour-2);
-        color: var(--colour-1);
-        font-family: 'Roboto Mono', monospace;
-        line-height: 1.5;
-        padding: 1rem;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-        }
-
+background-color: var(--colour-2);
+color: var(--colour-1);
+font-family: 'Roboto Mono', monospace;
+line-height: 1.5;
+padding: 1rem;
+display: flex;
+flex-direction: column;
+gap: 1rem;
+}
 
 header {
-    display: flex;
-    justify-content: center;
-    margin-block-end: 3rem;
+display: flex;
+justify-content: center;
+margin-block-end: 3rem;
 }
 header h1 {
-    text-align: center;
+text-align: center;
 }
 
 .leftAlignNav {
-    align-items: flex-start;
+align-items: flex-start;
 }
 
 main h2 {
-    margin-block: 2rem;
+margin-block: 2rem;
 }
 
 .mainNavContainer {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+flex: 1;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 1rem;
 }
 
 footer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    margin-block-start: 1rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 0.5rem;
+margin-block-start: 1rem;
 }
 
-
 nav {
-    display: flex;
-    flex-direction: column;
-    min-width: fit-content;
-    flex: 1;
-    align-items: flex-end;
+display: flex;
+flex-direction: column;
+min-width: fit-content;
+flex: 1;
+align-items: flex-end;
 }
 
 main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+gap: 3rem;
 }
 
 aside {
-    visibility: hidden;
-    flex: 1;
+visibility: hidden;
+flex: 1;
 }
 
 footer {
-    display: flex;
-    justify-content: center;
-    margin-block-start: 3rem;
+display: flex;
+justify-content: center;
+margin-block-start: 3rem;
 }
 
 /*technique from Kevin Powell*/
@@ -114,7 +100,22 @@ footer {
 /*longer post about how this works and the * + * selector*/
 /*https://alistapart.com/article/axiomatic-css-and-lobotomized-owls/*/
 .prose > * + * {
-    margin-block-start: var(--prose-flow, 1em);
+margin-block-start: var(--prose-flow, 1em);
+}
+
+.prose h3 {
+margin-block-start: 2em;
+}
+
+.prose h4 {
+margin-block-start: 2em;
+}
+
+.prose img {
+max-width: 100%;
+width: 500px;
+border-radius: 0.75rem;
+margin-block: 1em;
 }
 
 /* breakpoints from Material Design Spec https://m3.material.io/foundations/layout/breakpoints/overview */
@@ -129,38 +130,38 @@ footer {
 
 /* expanded breakpoint : phone or tablet in landscape, desktop */
 @media (width < 1200px) {
-    header {
-        margin-block-end: 2rem;
+header {
+margin-block-end: 2rem;
     }
-    footer {
-        margin-block-start: 2rem;
+footer {
+margin-block-start: 2rem;
     }
 }
 /* medium breakpoint : tablet in portrait */
 @media (width < 840px) {
-    header {
-        margin-block-end: 1rem;
+header {
+margin-block-end: 1rem;
     }
-    .mainNavContainer {
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
+.mainNavContainer {
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
     }
-    nav {
-        flex: 0;
-        width: 100%;
-        max-width: 80rch;
-        justify-content: space-between;
-        flex-direction: row;
+nav {
+flex: 0;
+width: 100%;
+max-width: 80rch;
+justify-content: space-between;
+flex-direction: row;
     }
-    main {
-        flex: 1;
+main {
+flex: 1;
     }
-    aside {
-        flex: 0;
+aside {
+flex: 0;
     }
-    footer {
-        margin-block-start: 1rem;
+footer {
+margin-block-start: 1rem;
     }
 }
 /* compact breakpoint : phone in portrait */
