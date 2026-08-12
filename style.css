@@ -24,6 +24,7 @@ color: var(--link-colour);
 section > h3 {
     margin-block-end: 1em;
     }
+    /*spacing*/
 
 body {
 background-color: var(--colour-2);
