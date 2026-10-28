@@ -1,0 +1,306 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Assignment 3: Final Instrument</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="./assets/icons/chess.png">
+
+<link rel="stylesheet" href="reset.css">
+<link rel="stylesheet" href="style.css">
+
+<style>
+/* CHANGE THE COLOURS HERE: these three variables control the whole page */
+:root {
+    --colour-1: #005a60;   /* text and lines (light mode) */
+    --colour-2: #d9e6e7;   /* background (light mode) */
+    --link-colour: #cc77be;
+}
+
+@media (prefers-color-scheme: dark) {
+:root {
+    --colour-1: #d9e6e7;   /* text and lines (dark mode) */
+    --colour-2: #005a60;   /* background (dark mode) */
+    --link-colour: #cc77be;
+}
+}
+
+/* space between paragraphs, lists, tables and headings inside every section */
+section > * + * {
+    margin-block-start: 1.25em;
+}
+
+section > h2 {
+    margin-block-start: 0;
+}
+
+section h3 {
+    margin-block-start: 2rem;
+}
+
+article > * + * {
+    margin-block-start: 1.25em;
+}
+
+article + article,
+section + section {
+    margin-block-start: 3rem;
+}
+
+ul {
+    padding-inline-start: 1.25rem;
+}
+
+li + li {
+    margin-block-start: 1em;
+}
+
+details summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+details[open] summary {
+    margin-block-end: 0.75em;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-block-start: 1rem;
+}
+
+th, td {
+    border: 1px solid var(--colour-1);
+    padding: 0.5rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+th {
+    background-color: var(--link-colour);
+    color: var(--colour-2);
+}
+
+img { max-width: 100%; height: auto; }
+figcaption { font-size: 0.9em; }
+</style>
+</head>
+<body>
+
+<header>
+<h1>Final Instrument</h1>
+</header>
+
+<div class="mainNavContainer">
+<nav>
+<a href="index.html">Home</a>
+<a href="assignment1.html">Assignment 1</a>
+<a href="assignment2.html">Assignment 2</a>
+</nav>
+
+<main>
+
+<section class="prose">
+<h2>Canopy Overview</h2>
+
+<p>Canopy is a browser-based ambient audio instrument intended for study and focus sessions. Using the Pomodoro technique, a 25-minute timer is set when a session is commenced, during which you grow a tree, and leaves bloom, producing individual unique sounds sourced from legowelt. Click a leaf to start a loop, click it again to stop it, and layer as many sound tiles as you like over one 130-minute study cycle the user builds a soundscape that is unique to their study session.</p>
+
+
+
+<figure>
+<img src="canopy-screenshot.png" alt="Canopy in dark mode during the long break after all four focus sessions, showing a fully grown tree with purple and green leaves, the timer card at the bottom left and the volume controls at the bottom right">
+<figcaption>Canopy in dark mode at the end of a full study cycle, during the long break</figcaption>
+</figure>
+</section>
+
+<section>
+<h2>Scenario and response</h2>
+
+<p>The brief I chose was scenario 5, Dynamic Soundtracker, which asks me to design a way for users to create an ongoing dynamic soundtrack suited to an environment or activity of their choice. I chose study sessions as my overall activity when studying, as a person’s attention is invested in their focus and work, so I aimed to have the input from users remain minimal, allowing time in between interactions. Canopy responds in three distinct ways, the first being the tree growing on its own as the timer runs, allowing new sound tiles to arrive without any user input. The second is the one-click input that keeps a sound tile looping for as long as the person wants, so a small input shapes the soundtrack for a long time. Lastly, the unplayed leaves remain silent on the tree, so the user can ignore the instrument while they are in focus and then interact while on a break at their own pace.</p>
+</section>
+
+<section>
+<h2>Core interactive features</h2>
+
+<h3>Focus timer and growing tree</h3>
+<p>The study session timer runs four 25-minute focus sessions which feature 5-minute breaks, and then a final 15-minute break at the end. Each focus session equally grows one bunch of four leaves, so a full cycle grows 16. The time is measured from the clock, ensuring it stays accurate if the tab is open running in the background while a user studies. Bunching leaves together in a cluster format was deliberately done to make the growth progress more cohesively visible to users, allowing them to feel motivated to continue and fulfil the rest of the tree with leaves. The timer is also positioned in the left corner in its own card, making it distinctly visible to the user upon viewing the website.</p>
+
+<h3>Playable leaves</h3>
+<p>Every bloomed leaf is a toggle button, clicking it fades in a sustained note and a looping sample, and the leaf glows while it plays. This is the core interaction of my application one small action that can produce a lasting result. The leaves fade, and a glow appears around them when they are clicked, as opposed to harsh outlines, which made the leaves feel too bold and distracting for the theme of studying this design keeps them gentle for someone in intense concentration.</p>
+
+<h3>Automatic balance and volume</h3>
+<p>As leaves are layered, each is turned down in proportion to one over the square root of the number playing, so the mix never jumps in loudness, which would throw off the user’s focus. I have included a one volume slider and a “stop all sounds” button which help the user to have control over the overall volume when interacting with the leaf sound tiles, and the option to stop all sounds if it becomes overwhelming for them.</p>
+
+<h3>Phase chimes</h3>
+<p>A soft chime marks the end of a focus session, a break and the full cycle. This was added to ensure users know when to rest or return to their focus session without looking at the screen. I also included a demo speed toggle that runs the clock 60 times faster so every phase can be reviewed in about two minutes. This was to allow anyone viewing the application to understand how it works and see it visually instead of just reading the instructions, and also anyone viewing the application in a quick manner in general. I additionally placed a clickasble button/ toggle can allow users to switch between light and dark mode, following the system setting at first.</p>
+
+<h3>Learnibility</h3>
+<p>The line of text underneath the heading states what Canopy is in one line. Start is the only prominent control at first, and it changes colour and label as the state changes, a status line and screen reader announcements say what has happened, and the “How it works” dialog explains the instrument in four steps. The dialogue was added after peer testing showed only 4 out of 10 participants found the tree inviting to explore.</p>
+</section>
+
+<section>
+<h2>Extended technique: controlled randomness with Math.random()</h2>
+
+<p>Math.random() returns a pseudo-random number from 0 up to 1, and the browser chooses the seed, so the user cannot set it. Used alone, it makes noise, so I let randomness decide what happens and rules decide how much.</p>
+
+<table>
+<thead>
+<tr>
+<th>Where it is used</th>
+<th>What is random</th>
+<th>The rule that controls it</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sound for each leaf</td>
+<td>Which of 5 tiers is picked</td>
+<td>Weights of 28, 26, 22, 16 and 8, so the rare "bell" appears least</td>
+</tr>
+<tr>
+<td>Rare tier</td>
+<td>Its chance of appearing</td>
+<td>If 8 leaves have bloomed with no rare one, its weight is multiplied by 4</td>
+</tr>
+<tr>
+<td>Held note</td>
+<td>Which of C4, E4, G4, D4, A4</td>
+<td>Weights of 30, 25, 20, 15 and 10, all from one pentatonic scale</td>
+</tr>
+<tr>
+<td>Bloom times</td>
+<td>When each leaf appears</td>
+<td>The focus session is split into four parts, with one leaf at a random moment in each</td>
+</tr>
+<tr>
+<td>Loop start</td>
+<td>Where in the sample it begins</td>
+<td>Anywhere in the sample, so the same sound is never heard identically twice</td>
+</tr>
+<tr>
+<td>Leaf and branch form</td>
+<td>Leaf shape, branch tilt, length and bend</td>
+<td>Shapes stay within a teardrop outline pointing at their branch, and the tree is generated once and re-laid out on resize</td>
+</tr>
+</tbody>
+</table>
+
+<p>Randomness allows each session's soundscape to be personal and unrepeatable, which is what a dynamic soundtrack requires, and it gives the instrument something new to offer after each stretch of low user input. Peer testing supported this, with weighted randomness being the most meaningful of my prototypes and random timing the most engaging.</p>
+</section>
+
+<section>
+<h2>Design system</h2>
+
+<p>When designing the UI and UX in this final strech of the project I realised my goal was to create a calm and minimal atmosphere because this is a study tool this led to a lot of iterations and also made me take a lot of time thinking about teh appearence before coding I didn’t want the application to be boring but did not want it to be too reliant on aesthetics and UI that the functionality was lost this led me to removing unnesicary visuals like decorative particles, heavy borders and text that does not help the person take action. I also ensured I added cards and other repeated UI elements so the design felt familiar and easy to navigate.</p>
+
+<ul>
+<li><strong>Colour</strong> - I used a muted palette of light lavender and sage green taken directly from my mood board for the light mode and for dark mode I used a deep purple for the background and green for headings. I made the timer sage green on a deep purple background, allowing it to be the clearest element. In light mode, the same hues are darkened to keep contrast. All colours are CSS custom properties (design tokens) in tokens.css, shared by both themes and every breakpoint.</li>
+<li><strong>Typography</strong> - I used Google Fonts ‘Great Vibes’ for the headings, which adds a little whimsical element and keeps a garden theme then I used ‘Kedebideri’ for body text, and controls are clear at small sizes. Both are open-licence fonts bundled with the site.</li>
+<li><strong>Spacing and shape</strong> - One spacing scale. I used small rounded buttons that behave the same in every state, and soft leaf shapes with no outline.</li>
+<li><strong>Layout</strong> - The tree sits at the centre, the timer is fixed at the bottom left and the sound controls at the bottom right, and the tree layout steers around them so nothing overlaps.</li>
+</ul>
+
+<table>
+<thead>
+<tr>
+<th>Breakpoint</th>
+<th>Width</th>
+<th>Layout</th>
+<th>Leaf size</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Medium</td>
+<td>under 840px</td>
+<td>One column, controls stacked below the tree</td>
+<td>58px</td>
+</tr>
+<tr>
+<td>Expanded</td>
+<td>840 to 1199px</td>
+<td>Tree centred, controls floating in the lower corners</td>
+<td>68px</td>
+</tr>
+<tr>
+<td>Large</td>
+<td>1200 to 1600px</td>
+<td>As Expanded, larger base text</td>
+<td>74px</td>
+</tr>
+<tr>
+<td>Extra-large</td>
+<td>over 1600px</td>
+<td>As Large, largest text so big screens do not look sparse</td>
+<td>88px</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section>
+<h2>Accessibility</h2>
+
+<p>Every leaf and control is a real button that works with the keyboard and has a visible focus ring. Leaves report on or off to screen readers, the timer has a timer role, and a live region announces new leaves and phase changes. Touch point targets are at least 44px, and high-contrast colours are used in both colour themes to support low vision users.</p>
+</section>
+
+<section>
+<h2>How the community of practice shaped the design</h2>
+
+<ul>
+<li><strong>Concept feedback and chats with Patrick</strong> - My first concept grew a tree passively and was too hands-off. Patrick suggested making branches clickable to trigger a sound, which led to the idea of the playable leaves. In a later one-to-one he pointed me to the Legowelt sample packs, and I took photographs of plant structures to shape the tree.</li>
+<li><strong>Peer testing (Week 11, 11 responses)</strong> - The central trunk layout was clearest and least cluttered, weighted randomness was the most meaningful, and random timing the most engaging. I combined those in the final design and added clearer cues, including the "How it works" pop-up button.</li>
+<li><strong>Characterisation exercise (Week 12)</strong> - I chose the words creative, advanced and consistent, which led to abstract colour and repeated rounded buttons and shapes so nothing has to be re-learned.</li>
+<li><strong>Button styles exercise (Week 13)</strong> - Comparing MDN, Google and W3Schools buttons made me realise that growth does not appear straight away, so the Start button needed an immediate change of state.</li>
+</ul>
+</section>
+
+<section>
+<h2>Credits</h2>
+
+<ul>
+<li>Audio engine: <a href="https://tonejs.github.io/">Tone.js</a></li>
+<li>Loop samples: Legowelt Kawai K4 Sample Pack (legowelt.org, 3 December 2018). Samples are provided by Legowelt to use freely. <a href="[add sample pack link]">sample-pack</a></li>
+<li>Fonts: Kedebideri and Great Vibes, SIL Open Font License, via Google Fonts</li>
+<li>AI assistance: Claude (Anthropic) helped build and refine the code and draft this documentation.</li>
+</ul>
+</section>
+
+<section id="commit-log">
+<h2>Final commit log</h2>
+
+<details>
+    <summary>Commit Logs</summary>
+    <!-- Paste the <table> generated from commit_history.csv here (the same converter you used for A2) -->
+</details>
+</section>
+
+</main>
+
+<aside></aside>
+
+</div>
+
+<footer>
+<p>
+Page maintained by:
+<a href="https://github.com/KeiraIzzard/" target="_blank">
+Keira Izzard
+</a>
+</p>
+<p>
+<a href="https://au.miro.com/app/board/u3jVOf54oDs=/?share_link_id=122938173199" target="_blank">
+Link to Community of Practice
+</a>
+</p>
+</footer>
+
+</body>
+</html>
